@@ -1,2 +1,2 @@
-# fuf agency powershell collection
-Useful Powershell Scripts created with ChatGPT
+# franz.agency powershell collection
+Useful Powershell Scripts created with the help of ChatGPT

@@ -1,10 +1,37 @@
-# Translate and rename all subdirectories in the specified input directory. It uses the DeepL API for translation.
-# Author: Georg Franz and chat gpt 3.5, https://franz.agency
-# Version: 1.0
-# Date: 2023-02-15
-# Sample usage: .\translate_directories.ps1 -Directory "C:\Users\test\Desktop\test" -SourceLang "EN" -TargetLang "DE" -DryRun
+<#
+.SYNOPSIS
+This script translates the names of directories and subdirectories in a specified directory.
 
-    [CmdletBinding()]
+.DESCRIPTION
+This script accepts a number of parameters, including the source and target languages for translation,
+the directory to translate, and whether to perform a dry run. The script also includes a function to translate
+an array of text using the DeepL API, checks for valid API keys and PowerShell version, and handles errors such
+as non-existent directories and exceeding the 128KB limit for DeepL translation. The script outputs the number
+of translated directories at the end, unless in dry-run mode.
+
+.PARAMETER Directory
+Specifies the directory to translate. Defaults to the current location.
+
+.PARAMETER SourceLang
+Specifies the source language for translation. Defaults to "DE".
+
+.PARAMETER TargetLang
+Specifies the target language for translation. Defaults to "EN".
+
+.PARAMETER DryRun
+Indicates whether to perform a dry run, which will output the translations that would occur without actually performing them. Defaults to false.
+
+.EXAMPLE
+.\translate_directories.ps1 -Directory "C:\Users\test\Desktop\test" -SourceLang "EN" -TargetLang "DE" -DryRun
+Translates all directories and subdirectories in the specified directory from English to German.
+
+.NOTES
+Author: Georg Franz with the help of Chat GPT, https://franz.agency
+Version: 1.0
+Last updated: 2023-02-18
+#>
+
+[CmdletBinding()]
 param(
     [Parameter(Mandatory = $false, Position = 0)]
     [string]$Directory = (Get-Location).Path,

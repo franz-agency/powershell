@@ -7,7 +7,7 @@ This script accepts a number of parameters, including the source and target lang
 the directory to translate, and whether to perform a dry run. The script also includes a function to translate
 an array of text using the DeepL API, checks for valid API keys and PowerShell version, and handles errors such
 as non-existent directories and exceeding the 128KB limit for DeepL translation. The script outputs the number
-of translated directories at the end, unless in dry-run mode.
+of translated directories at the end.
 
 .PARAMETER Directory
 Specifies the directory to translate. Defaults to the current location.

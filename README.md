@@ -7,8 +7,15 @@ This PowerShell script translates the names of directories and subdirectories in
 ### Usage
 .\translate_directories.ps1 -Directory "C:\Users\test\Desktop\test" -SourceLang "EN" -TargetLang "DE" -DryRun
 
-### Config
-Please copy the config.ini.template to config.ini and add your DeepL API key there
+### Install
+You can clone this repository using the following command:
+git clone https://github.com/franz-agency/powershell.git
+
+## DeepL API
+
+This script uses the [DeepL API](https://www.deepl.com/docs-api/) to perform translations. To use this script, you will need a paid API key from DeepL. You can sign up for a free trial or purchase an API key on the [DeepL API website](https://www.deepl.com/pro#developer).
+
+Once you have an API key, you can add it to the `config.ini` file in this repository. If you don't have this file, you can create it from the `config.ini.template` file and add your API key.
 
 ### Warning!
-There is no way back. The directories are really renamed. So better keep a backup. But you can use the dry-run param to check the translation.
+There is no way back. The directories are really renamed. So better keep a backup. But you can use the dry-run param to check the translation. Try it first with some small test directories.

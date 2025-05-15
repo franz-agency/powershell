@@ -1,7 +1,5 @@
 # Franz.Agency PowerShell Collection
 
-[![Franz.Agency](https://franz.agency/images/logo.svg)](https://franz.agency)
-
 A collection of useful PowerShell scripts developed by [Franz.Agency](https://franz.agency) to automate common tasks and improve workflow efficiency.
 
 ## Table of Contents

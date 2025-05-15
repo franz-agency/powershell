@@ -90,6 +90,9 @@ Combines the content of all files from a specified directory and its subdirector
 - Clearly separates each file's content with a header showing its relative path
 - Preserves the original content formatting
 - Supports both absolute and relative paths
+- Checks for existing output files with confirmation prompt
+- Provides option to force overwrite without prompting
+- Offers optional timestamp addition to output filenames
 
 #### Usage
 
@@ -100,10 +103,16 @@ Combines the content of all files from a specified directory and its subdirector
 # Using relative paths
 .\makeonefile.ps1 -SourceDirectory ".\src" -OutputFile "combined_src.txt"
 
-# Using variables
+# Automatically overwrite existing file without prompting
+.\makeonefile.ps1 -SourceDirectory ".\src" -OutputFile "combined_src.txt" -Force
+
+# Add timestamp to output filename (e.g., combined_src_20250515_102030.txt)
+.\makeonefile.ps1 -SourceDirectory ".\src" -OutputFile "combined_src.txt" -AddTimestamp
+
+# Using variables with both Force and AddTimestamp parameters
 $srcDir = "D:\Projects\WebApp"
 $outputPath = "D:\Documentation\WebApp_Full_Source.txt"
-.\makeonefile.ps1 -SourceDirectory $srcDir -OutputFile $outputPath
+.\makeonefile.ps1 -SourceDirectory $srcDir -OutputFile $outputPath -Force -AddTimestamp
 ```
 
 ### translate_directories.ps1
